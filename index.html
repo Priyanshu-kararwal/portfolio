@@ -3,75 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Priyanshu | AI & ML Enthusiast</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Priyanshu | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="main-container">
+  <div class="container">
     <header class="header">
+      <img src="profile.jpg" alt="Priyanshu" class="profile-pic" id="profileImg">
       <h1>Priyanshu</h1>
-      <p class="tagline">AI & ML Enthusiast</p>
+      <p class="subtitle">AI & ML Enthusiast | BTech Student</p>
     </header>
 
-    <div class="card">
-      <h2>Contact</h2>
-      <ul>
-        <li><strong>Address:</strong> Gurgaon, Haryana, 122001</li>
-        <li><strong>Phone:</strong> 8383932472</li>
-        <li><strong>Email:</strong> <a href="mailto:priyanshu.kararwal@gmail.com">priyanshu.kararwal@gmail.com</a></li>
-      </ul>
-    </div>
+    <main>
+      <section class="accordion">
+        <button class="accordion-btn">📍 Contact</button>
+        <div class="accordion-content">
+          <p><strong>Email:</strong> priyanshu.kararwal@gmail.com</p>
+          <p><strong>Phone:</strong> 8383932472</p>
+          <p><strong>Location:</strong> Gurgaon, Haryana</p>
+        </div>
+      </section>
 
-    <div class="card">
-      <h2>Objective</h2>
-      <p>I am a driven and results-oriented BTech student specializing in AI and Machine Learning. With hands-on project experience and a passion for innovation, I aim to contribute to impactful technological solutions.</p>
-    </div>
+      <section class="accordion">
+        <button class="accordion-btn">🎯 Objective</button>
+        <div class="accordion-content">
+          <p>To leverage AI/ML knowledge and problem-solving skills to build impactful technologies and systems.</p>
+        </div>
+      </section>
 
-    <div class="card">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Golden Ratio:</strong> Mathematical modeling and research-based project</li>
-        <li><strong>Open Forum Platform:</strong> Registration system using HTML, CSS, JS & PostgreSQL</li>
-      </ul>
-    </div>
+      <section class="accordion">
+        <button class="accordion-btn">💡 Projects</button>
+        <div class="accordion-content">
+          <ul>
+            <li><strong>Golden Ratio:</strong> Explored mathematical beauty and patterns in nature.</li>
+            <li><strong>Open Forum Platform:</strong> Created with HTML, CSS, JS and PostgreSQL.</li>
+          </ul>
+        </div>
+      </section>
 
-    <div class="card">
-      <h2>Research Papers</h2>
-      <ul>
-        <li>Golden Ratio</li>
-        <li>Electric Cars</li>
-      </ul>
-    </div>
+      <section class="accordion">
+        <button class="accordion-btn">🧠 Research Papers</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Golden Ratio</li>
+            <li>Electric Cars</li>
+          </ul>
+        </div>
+      </section>
 
-    <div class="card">
-      <h2>Certifications</h2>
-      <ul>
-        <li>"THE M&A Masterminds" at Rendezvous 2024 – Participation</li>
-        <li>"ITSODS-2024" – International Conference Presentation</li>
-      </ul>
-    </div>
+      <section class="accordion">
+        <button class="accordion-btn">📄 Certifications</button>
+        <div class="accordion-content">
+          <ul>
+            <li>The M&A Masterminds – IIT Delhi, Rendezvous 2024</li>
+            <li>ITSODS 2024 – International Conference Participant</li>
+          </ul>
+        </div>
+      </section>
 
-    <div class="card">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>B.Tech in Computer Science (AI & ML)</strong> – Dronacharya College of Engineering (2024–2028)</li>
-        <li><strong>12th Grade</strong> – Govt. Boys Sr Sec School, Samalka, Delhi (2022–2023)</li>
-      </ul>
-    </div>
+      <section class="accordion">
+        <button class="accordion-btn">🎓 Education</button>
+        <div class="accordion-content">
+          <p><strong>B.Tech (AI & ML)</strong> – Dronacharya College of Engineering</p>
+          <p><strong>12th Grade (CBSE)</strong> – Govt. Boys Sr. Sec. School, Delhi</p>
+        </div>
+      </section>
 
-    <div class="card">
-      <h2>Skills</h2>
-      <p>Python, C, PostgreSQL, HTML & CSS, Deep Learning, DSA, Autonomous Vehicles, AI Research, Web Development</p>
-    </div>
+      <section class="accordion">
+        <button class="accordion-btn">⚙️ Skills</button>
+        <div class="accordion-content">
+          <p>Python, C, HTML, CSS, PostgreSQL, DSA, Deep Learning, AI Research</p>
+        </div>
+      </section>
 
-    <div class="card">
-      <h2>Interests</h2>
-      <p>Deep Learning, AI Systems, Tech for Real-World Problems, Autonomous Vehicles</p>
-    </div>
+      <section class="accordion">
+        <button class="accordion-btn">🌟 Interests</button>
+        <div class="accordion-content">
+          <p>Artificial Intelligence, Robotics, Space Tech, Research</p>
+        </div>
+      </section>
+    </main>
 
     <footer>
-      <p>&copy; 2025 Priyanshu. All rights reserved.</p>
+      <p>© 2025 Priyanshu . All rights reserved . </p>
     </footer>
   </div>
+
+  <!-- Modal for Profile Picture -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <!-- Script -->
+  <script>
+    // Accordion toggle
+    document.querySelectorAll('.accordion-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        button.classList.toggle('active');
+        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+      });
+    });
+
+    // Image modal
+    const modal = document.getElementById("imageModal");
+    const img = document.getElementById("profileImg");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.querySelector(".close");
+
+    img.onclick = () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    };
+
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    };
+  </script>
 </body>
 </html>
